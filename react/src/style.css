@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+body {
+    padding-top: 80px;
+    font-family:  'Noto Sans JP', sans-serif;
+}
+
+footer div {
+    height: 60px;
+}
+
+.navbar-brand {
+    cursor: pointer;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.content {
+    min-height: calc(100vh - 156px);
+}
+
+.restaurant-card {
+    width: 18rem;
+}
+
+.restaurant-card a {
+    color: black;
+}
+
+.restaurant-card img {
+    height: 180px;
+}
+
+.restaurant-show img {
+    height: 30vw;
+    max-height: 400px;
+}
+
+.star {
+    width: 16px;
+}
+
+.edit_restaurant_img {
+    width: 40%;
+}
+
+.edit_restaurant_img img {
+    width: 100%;
+}
