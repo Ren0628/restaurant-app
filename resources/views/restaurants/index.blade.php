@@ -9,7 +9,7 @@
     <a href="{{ route('user-home') }}" class="text-decoration-none fs-5 d-inline-block mb-3">&lt; HOME</a>
     @endif
 @endif
-<div class="d-flex">
+<div class="d-flex flex-wrap">
 @if(Auth::guard('owner')->check())
     @if(Request::is('*mypage*'))
     <form action="{{ route('owner.mypage') }}" method="get">
@@ -61,7 +61,7 @@
     </div>
 </form>
 
-@if(Auth::guard('owner')->check())
+<!-- @if(Auth::guard('owner')->check())
     @if(Request::is('*mypage*'))
     <form action="{{ route('owner.mypage') }}" method="get">
     @else
@@ -86,7 +86,7 @@
     @endisset
     <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i> 近くのお店を検索</button>
     </div>
-</form>
+</form> -->
 
 @if(Auth::guard('owner')->check())
     @if(Request::is('*mypage*'))
@@ -106,11 +106,20 @@
     <a href="{{ route('index') }}" class="btn btn-outline-danger mb-3 ms-2">リセット</a>
 @endif
 </div>
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     @if(isset($serched_restaurants))
         @foreach($serched_restaurants as $restaurant)
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 18rem;">
                 @if(Auth::guard('owner')->check())
                     <a href="{{ route('owner.show', $restaurant) }}" class="text-decoration-none" style="color:black;">
                 @elseif(Auth::guard('admin')->check())
@@ -133,7 +142,7 @@
     @elseif(isset($near_restaurants))
         @foreach($near_restaurants as $restaurant)
             <div class="col">
-                <div class="card" style="width: 18rem;">
+                <div class="card mx-auto" style="width: 18rem;">
                 @if(Auth::guard('owner')->check())
                     <a href="{{ route('owner.show', $restaurant) }}" class="text-decoration-none" style="color:black;">
                 @elseif(Auth::guard('admin')->check())
@@ -156,7 +165,7 @@
     @else
         @foreach($restaurants as $restaurant)
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card mx-auto" style="width: 18rem;">
             @if(Auth::guard('owner')->check())
                 <a href="{{ route('owner.show', $restaurant) }}" class="text-decoration-none" style="color:black;">
             @elseif(Auth::guard('admin')->check())
