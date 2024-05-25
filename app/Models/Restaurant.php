@@ -29,17 +29,19 @@ class Restaurant extends Model
         return $this->hasOne(Location::class);
     }
 
-    static function get_location($address) {
-        $myKey = "AIzaSyC1v2WCRaeth7W56X75S0XDwHBK--2g1WA";
+    // static function get_location($address) {
+    //     $myKey = "AIzaSyC1v2WCRaeth7W56X75S0XDwHBK--2g1WA";
     
-        $encodeAddress = urlencode($address);
+    //     $encodeAddress = urlencode($address);
         
-        $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "+CA&key=" . $myKey ;
+    //     $url = "https://maps.googleapis.com/maps/api/geocode/json?address=" . $address . "+CA&key=" . $myKey ;
         
-        $contents= file_get_contents($url);
+    //     $contents= file_get_contents($url);
 
-        $jsonData = json_decode($contents,true);
+    //     $jsonData = json_decode($contents,true);
+
+    //     dd($jsonData);
     
-        return $jsonData["results"][0]["geometry"]["location"];
-    }
+    //     return $jsonData["results"][0]["geometry"]["location"];
+    // }
 }
