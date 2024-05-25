@@ -103,8 +103,8 @@ class RestaurantController extends Controller
             $restaurant->access = $request->input('access');
             $restaurant->owner_id = Auth::id();
             $restaurant->img_path = $path;
-            $restaurant->lat = Restaurant::get_location($restaurant->address)['lat'];
-            $restaurant->lng = Restaurant::get_location($restaurant->address)['lng'];
+            $restaurant->lat = 1;
+            $restaurant->lng = 1;
             $restaurant->save();
 
             return redirect()->route('owner.mypage');
@@ -174,8 +174,8 @@ class RestaurantController extends Controller
             $restaurant->address = $request->input('address');
             $restaurant->access = $request->input('access');
             $restaurant->img_path = $path;
-            $restaurant->lat = Restaurant::get_location($restaurant->address)['lat'];
-            $restaurant->lng = Restaurant::get_location($restaurant->address)['lng'];
+            $restaurant->lat = 1;
+            $restaurant->lng = 1;
             $restaurant->save();
 
             if(Auth::guard('owner')->check()) {
