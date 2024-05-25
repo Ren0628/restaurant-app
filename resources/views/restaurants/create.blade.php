@@ -17,19 +17,19 @@
             @csrf
             <div class="mb-3">
                 <label class="form-label" for="img_path">お店の画像</label>
-                <input id="img_path" class="form-control" type="file" name="img_path" value="{{ old('img_path') }}">
+                <input id="img_path" class="form-control" type="file" name="img_path" value="{{ old('img_path') }}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="restaurant_name">店名</label>
-                <input class="form-control" type="text" name="restaurant_name" value="{{ old('restaurant_name') }}">
+                <input class="form-control" type="text" name="restaurant_name" value="{{ old('restaurant_name') }}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="introduction">紹介文</label>
-                <textarea class="form-control" name="introduction">{{ old('introduction') }}</textarea>
+                <textarea class="form-control" name="introduction" required>{{ old('introduction') }}</textarea>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="genre">料理ジャンル</label>
-                <select name="genre" id="genre" class="form-select mb-3">
+                <select name="genre" id="genre" class="form-select mb-3" required>
                     <option disabled selected value>選択してください</option>
                     @if ($errors->any())
                         @foreach($genres as $genre)
@@ -48,19 +48,19 @@
             </div>
             <div class="mb-3">
                 <label class="form-label" for="budget">価格帯</label>
-                <input class="form-control" type="text" name="budget" value="{{ old('budget') }}">
+                <input class="form-control" type="text" name="budget" value="{{ old('budget') }}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="phone">電話番号</label>
-                <input class="form-control" type="text" name="phone" value="{{ old('phone') }}">
+                <input class="form-control" type="text" name="phone" value="{{ old('phone') }}" required>
         </div>
         <div class="mb-3">
                 <label class="form-label" for="address">住所</label>
-                <input class="form-control" type="text" name="address" value="{{ old('address') }}">
+                <input class="form-control" type="text" name="address" value="{{ old('address') }}" required>
             </div>
             <div class="mb-3">
                 <label class="form-label" for="access">アクセス</label>
-                <input class="form-control" type="text" name="access" value="{{ old('access') }}">
+                <input class="form-control" type="text" name="access" value="{{ old('access') }}" required>
             </div>
                 <button type="submit" class="btn btn-primary">登録</button>
         </form>
