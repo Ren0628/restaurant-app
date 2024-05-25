@@ -37,10 +37,10 @@ Route::get('password/owner/reset/{token}', [App\Http\Controllers\Auth\OwnerReset
 Route::post('password/owner/reset', [App\Http\Controllers\Auth\OwnerResetPasswordController::class, 'reset'])->name('owner.password.update');
 
 Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm']);
-// Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
+    Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
 
 Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
-// Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
+    Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
 
 Route::get('/admin', [RestaurantController::class, 'index'])->middleware('auth:admin')->name('admin-home');
 
