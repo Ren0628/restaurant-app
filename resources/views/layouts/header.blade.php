@@ -53,7 +53,6 @@
                                 <a class="dropdown-item" href="{{ url('register') }}">ユーザー新規登録</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url('login/owner') }}">オーナーログイン</a>
-                                <div class="dropdown-divider"></div>
                             </div>
                         </li>
                         @endif
