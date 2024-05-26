@@ -126,10 +126,10 @@
                         <div class="card-title mb-0">{{ $review->user->name }}</div>
                         <div class="d-flex">
                             @for($i = 1; $i <= $review->score; $i++)
-                            <img src="{{ asset('storage/img/star-point.png') }}" alt="" style="width:16px;">
+                            <img src="{{ asset('img/star-point.png') }}" alt="" style="width:16px;">
                             @endfor
                             @for($i = 1; $i <= 5 - $review->score; $i++)
-                            <img src="{{ asset('storage/img/star-no-point.png') }}" alt="" style="width:16px;">
+                            <img src="{{ asset('img/star-no-point.png') }}" alt="" style="width:16px;">
                             @endfor
                         </div>
                         <p class="card-text">{{ $review->content }}</p>
